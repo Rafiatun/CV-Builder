@@ -1,0 +1,68 @@
+{% extends 'index.html' %} 
+
+{% load static %} 
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="container">
+
+
+<form method="POST" class="uniform">
+    {% csrf_token %} 
+    
+
+    <div class="container form-control">
+        <div class="row">
+            <div class="col-sm-4 form-text">
+                {{ form1.Name|as_crispy_field }}
+                {{ form1.phone_number|as_crispy_field }}
+                {{ form1.email|as_crispy_field }}
+                {{ form1.About|as_crispy_field }}
+
+            </div>
+            <div class="col-sm-4 form-text">
+                {{ form1.Institution_Name|as_crispy_field }}
+                {{ form1.Education_1|as_crispy_field }}
+                {{ form1.Time|as_crispy_field }}
+                <br>
+                {{ form1.skill_1|as_crispy_field }}
+                {{ form1.skill_2|as_crispy_field }}
+                {{ form1.skill_3|as_crispy_field }}
+                {{ form1.skill_4|as_crispy_field }}
+                {{ form1.skill_5|as_crispy_field }}
+            </div>
+
+            <div class="col-sm-4 form-text">
+                {{ form1.Experience_1|as_crispy_field }}
+                {{ form1.Experince_Name1|as_crispy_field }}
+                {{ form1.Organization_1|as_crispy_field }}
+                <br>
+                {{ form1.Experience_2|as_crispy_field }}
+                {{ form1.Experince_Name2|as_crispy_field }}
+                {{ form1.Organization_2|as_crispy_field }}
+
+                <br>
+                <br>
+                {{ form1.Language_Proficiency|as_crispy_field }}
+                
+
+            </div>
+
+        </div>
+
+        <input class="btn btn-info btn-lg" type="submit">
+    </div>
+
+
+    
+
+
+</form>
+
+<br>
+<br>
+<br>
+
+</div>
+
+{% endblock %}
